@@ -1,0 +1,32 @@
+apply plugin: 'java-library'
+apply plugin: 'groovy'
+
+apply from: 'add-integration-tests.gradle'
+apply from: 'add-versions-plugin.gradle'
+apply from: 'add-source-artifacts.gradle'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.26'                         // Implementation-agnostic logging
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'              // @Nullable and other annotations
+
+    testImplementation 'ch.qos.logback:logback-classic:1.2.3'           // Logger implementation for tests
+    testImplementation 'cglib:cglib-nodep:3.2.12'                       // Spock testing framework
+    testImplementation 'org.spockframework:spock-core:1.3-groovy-2.5'   // Spock testing framework
+}
+
+
+/**
+ * Modifies all tasks of type {@link Test} and configures them to output their corresponding 
+ * tests' failure messages to the console when they occur, rather than a cryptic abbreviation.
+ */
+tasks.withType(Test) {
+    //noinspection GroovyAssignabilityCheck
+    testLogging {
+        showExceptions = true
+        exceptionFormat = 'full'
+    }
+}

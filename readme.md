@@ -26,3 +26,4 @@ Skeleton for creating Java libraries that are tested w/ Spock.
     - Added plugin which adds `:dependencyUpdates` task that will print the latest versions of all dependencies to console
     - Any tests that fails when run from the command line now output their full Spock expression for quicker debugging
     - Added `integration` configuration to confine all integration test dependencies
+    - Ensures Gradle 5's new POM support is enabled by default (`implementation` vs `compile`, etc.)

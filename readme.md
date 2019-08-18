@@ -17,7 +17,7 @@ Skeleton for creating Java libraries that are tested w/ Spock.
 ### Configuration
 
 - Sources
-    - Code lives under `/src/main/java`
+    - Source lives under `/src/main/java`
     - Unit tests live under `/src/test/groovy`
     - Integration tests live under `/src/integration/groovy`
 - Logging

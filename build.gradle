@@ -20,7 +20,7 @@ dependencies {
 
 
 /**
- * Modifies all tasks of type {@link Test} and configures them to output their corresponding 
+ * Modifies all tasks of type Test and configures them to output their corresponding 
  * tests' failure messages to the console when they occur, rather than a cryptic abbreviation.
  */
 tasks.withType(Test) {

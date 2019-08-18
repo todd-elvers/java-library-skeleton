@@ -1,4 +1,4 @@
-/*** Adds :dependencyUpdates that prints latest release versions of all dependencies ***/
+/*** Adds :dependencyUpdates task which prints latest release versions of all dependencies ***/
 
 
 /*

@@ -10,17 +10,21 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.slf4j:slf4j-api:1.7.26'                         // Implementation-agnostic logging
+    implementation 'org.slf4j:slf4j-api:1.7.28'                         // Implementation-agnostic logging
     implementation 'com.google.code.findbugs:jsr305:3.0.2'              // @Nullable and other annotations
 
+    implementation 'org.apache.commons:commons-collections4:4.3'        // Collections improvements
+    implementation 'org.apache.commons:commons-lang3:3.9'               // Language improvements
+    implementation 'commons-io:commons-io:2.6'                          // I/O improvements
+
     testImplementation 'ch.qos.logback:logback-classic:1.2.3'           // Logger implementation for tests
-    testImplementation 'cglib:cglib-nodep:3.2.12'                       // Spock testing framework
     testImplementation 'org.spockframework:spock-core:1.3-groovy-2.5'   // Spock testing framework
+    testImplementation 'cglib:cglib-nodep:3.3.0'                        // Spock testing framework
 }
 
 
 /**
- * Modifies all tasks of type Test and configures them to output their corresponding 
+ * Modifies all tasks of type Test and configures them to output their corresponding
  * tests' failure messages to the console when they occur, rather than a cryptic abbreviation.
  */
 tasks.withType(Test) {
